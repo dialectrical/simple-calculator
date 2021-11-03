@@ -1,12 +1,11 @@
 export function CalculatorObject() {
   this.firstNum = "";
   this.secondNum = "";
-  this.currentInput = 1;
   this.operation = "";
   this.result;
 
   this.inputNum = (num) => {
-    if (currentInput === 1) {
+    if (this.operation === "") {
       return (this.firstNum = this.firstNum + num);
     } else {
       return (this.secondNum = this.secondNum + num);
@@ -41,6 +40,7 @@ export function CalculatorObject() {
     } else if (this.operation === "/") {
       output = num1 / num2;
     }
+    this.operation = "";
     return (this.result = output);
   };
 }
