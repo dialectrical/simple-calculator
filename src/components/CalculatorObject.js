@@ -1,4 +1,4 @@
-export function CalculatorObject() {
+function CalculatorObject() {
   this.firstNum = "";
   this.secondNum = "";
   this.operation = "";
@@ -6,8 +6,7 @@ export function CalculatorObject() {
 
   this.inputNum = (num) => {
     if (this.solved === 1) {
-      this.solved === 0;
-      this.operation === "";
+      this.clearEverything();
     }
     if (this.operation === "") {
       return (this.firstNum = this.firstNum + num);
@@ -20,16 +19,11 @@ export function CalculatorObject() {
     if (this.firstNum === "") {
       return;
     }
-    this.operation = operation;
-    if (this.secondNum === "") {
-      return (this.currentInput = 2);
-    }
-
-    return this.calculate;
+    return (this.operation = operation);
   };
 
   this.calculate = () => {
-    if (secondNum === "") {
+    if (this.secondNum === "") {
       return;
     }
     let output;
@@ -44,8 +38,8 @@ export function CalculatorObject() {
     } else if (this.operation === "/") {
       output = num1 / num2;
     }
-    this.status = 1;
-    return (this.fistNum = output);
+    this.solved = 1;
+    return (this.firstNum = "" + output);
   };
 
   this.clear = () => {
@@ -60,6 +54,27 @@ export function CalculatorObject() {
     this.operation = "";
     this.firstNum = "";
     this.secondNum = "";
+    this.solved = 0;
     return;
   };
 }
+
+let test = new CalculatorObject();
+test.inputNum("5");
+test.inputNum("0");
+test.chooseOperation("*");
+test.inputNum("2");
+test.calculate();
+console.log(test.firstNum);
+test.calculate();
+test.calculate();
+console.log(test.firstNum);
+test.inputNum("5");
+test.inputNum("0");
+test.chooseOperation("*");
+test.inputNum("2");
+test.calculate();
+console.log(test.firstNum);
+test.calculate();
+test.calculate();
+console.log(test.firstNum);
