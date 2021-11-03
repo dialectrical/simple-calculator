@@ -1,4 +1,4 @@
-function CalculatorObject() {
+export function CalculatorObject() {
   this.firstNum = "";
   this.secondNum = "";
   this.operation = "";
@@ -84,17 +84,3 @@ function CalculatorObject() {
     return;
   };
 }
-
-let test = new CalculatorObject();
-test.inputNum("5");
-test.inputNum("0");
-test.decimal();
-test.decimal();
-test.inputNum("5");
-test.inputNum("1");
-test.chooseOperation("*");
-test.inputNum("2");
-test.decimal();
-test.inputNum("5");
-test.calculate();
-console.log(test.firstNum);
