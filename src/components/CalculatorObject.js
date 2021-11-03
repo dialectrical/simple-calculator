@@ -2,9 +2,13 @@ export function CalculatorObject() {
   this.firstNum = "";
   this.secondNum = "";
   this.operation = "";
-  this.result;
+  this.solved = 0;
 
   this.inputNum = (num) => {
+    if (this.solved === 1) {
+      this.solved === 0;
+      this.operation === "";
+    }
     if (this.operation === "") {
       return (this.firstNum = this.firstNum + num);
     } else {
@@ -40,7 +44,7 @@ export function CalculatorObject() {
     } else if (this.operation === "/") {
       output = num1 / num2;
     }
-    this.operation = "";
-    return (this.result = output);
+    this.status = 1;
+    return (this.fistNum = output);
   };
 }
