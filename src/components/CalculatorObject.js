@@ -3,6 +3,7 @@ function CalculatorObject() {
   this.secondNum = "";
   this.operation = "";
   this.solved = 0;
+  this.decimalUsed = 0;
 
   this.inputNum = (num) => {
     if (this.solved === 1) {
@@ -16,7 +17,11 @@ function CalculatorObject() {
   };
 
   this.decimal = () => {
-    //add a decimal point to current input. If no input yet, set input to "0.". Multiple decimal points in same number should not be allowed.
+    if (this.decimalUsed) {
+      return;
+    }
+    this.decimalUsed = 1;
+    this.inputNum(".");
   };
 
   this.negative = () => {
@@ -38,6 +43,7 @@ function CalculatorObject() {
     if (this.firstNum === "") {
       return;
     }
+    this.decimalUsed = 0;
     return (this.operation = operation);
   };
 
@@ -74,6 +80,7 @@ function CalculatorObject() {
     this.firstNum = "";
     this.secondNum = "";
     this.solved = 0;
+    this.decimalUsed = 0;
     return;
   };
 }
@@ -81,19 +88,13 @@ function CalculatorObject() {
 let test = new CalculatorObject();
 test.inputNum("5");
 test.inputNum("0");
-test.chooseOperation("*");
-test.inputNum("2");
-test.calculate();
-console.log(test.firstNum);
-test.calculate();
-test.calculate();
-console.log(test.firstNum);
+test.decimal();
+test.decimal();
 test.inputNum("5");
-test.inputNum("0");
+test.inputNum("1");
 test.chooseOperation("*");
 test.inputNum("2");
-test.calculate();
-console.log(test.firstNum);
-test.calculate();
+test.decimal();
+test.inputNum("5");
 test.calculate();
 console.log(test.firstNum);
