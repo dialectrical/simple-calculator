@@ -49,16 +49,17 @@ export function CalculatorObject() {
   };
 
   this.clear = () => {
-    if (this.secondInput === "") {
+    if (this.secondNum === "") {
       return this.clearEverything();
     } else {
-      return (this.secondInput = "");
+      return (this.secondNum = "");
     }
   };
 
   this.clearEverything = () => {
     this.operation = "";
-    this.firstInput = "";
-    this.secondInput = "";
+    this.firstNum = "";
+    this.secondNum = "";
+    return;
   };
 }
