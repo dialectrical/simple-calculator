@@ -49,10 +49,16 @@ export function CalculatorObject() {
   };
 
   this.clear = () => {
-    //clears current working input. If called twice in a row or called when secondInput is empty, clear everything.
+    if (this.secondInput === "") {
+      return this.clearEverything();
+    } else {
+      return (this.secondInput = "");
+    }
   };
 
   this.clearEverything = () => {
-    //reinitializes everything
+    this.operation = "";
+    this.firstInput = "";
+    this.secondInput = "";
   };
 }
