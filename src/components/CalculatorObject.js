@@ -47,4 +47,12 @@ export function CalculatorObject() {
     this.status = 1;
     return (this.fistNum = output);
   };
+
+  this.clear = () => {
+    //clears current working input. If called twice in a row or called when secondInput is empty, clear everything.
+  };
+
+  this.clearEverything = () => {
+    //reinitializes everything
+  };
 }
