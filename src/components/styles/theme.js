@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const theme = {
+  keyBg: "red",
+  keyShadow: "blue",
+  primaryText: "white"
+}
+
 export const theme1 = {
   bg: "hsl(222, 26%, 31%)",
   keypadBg: "hsl(223, 31%, 20%)",
@@ -10,8 +16,8 @@ export const theme1 = {
   keyShadowToggle: "hsl(6, 70%, 34%)",
   keyBgSecondary: "hsl(30, 25%, 89%)",
   keyShadowSecondary: "hsl(28, 16%, 65%)",
-  primaryText: "hsl(221, 14%, 31%)",
-  secondaryText: "hsl(0, 0, 100%)",
+  primaryText: "red",
+  secondaryText: "hsl(0, 0, 100%)"
 };
 
 export const theme2 = {
@@ -30,9 +36,9 @@ export const theme2 = {
 
 export const theme3 = {
   bg: "hsl(268, 75%, 9%)",
-  keypadBg: "hsl(268, 71%, 12%)",
+  keypadBg: "hsl(268, 71%,= 12%)",
   screenBg: "hsl(224, 36%, 15%)",
-  keyBg: "hsl(176, 100%, 44%)",
+  keyBg: "hsl(176 100% 44%)",
   keyShadow: "hsl(177, 92%, 70%)",
   keyBgToggle: "hsl(6, 63%, 50%)",
   keyShadowToggle: "hsl(6, 70%, 34%)",
