@@ -6,6 +6,7 @@ export function CalculatorObject() {
   this.decimalUsed = 0;
 
   this.inputNum = (num) => {
+    console.log(num);
     if (this.solved === 1) {
       this.clearEverything();
     }
